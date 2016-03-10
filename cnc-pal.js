@@ -1,7 +1,7 @@
 'use strict';
 
 let Promise = require('bluebird'),
-    parser = require('@phrohdoh/@phrohdoh/binary-buffer-parser'),
+    parser = require('@phrohdoh/binary-buffer-parser'),
     fs = Promise.promisifyAll(require('fs'));
 
 exports.parsePalAsync = function(filename, palSize, remapShadowIndexArr) {
@@ -19,10 +19,11 @@ exports.parsePalAsync = function(filename, palSize, remapShadowIndexArr) {
         }
     
         colors[0] = 0;
-    
-        if (remapShadowIndexArr !== undefined)
-            for (let i of remapShadowIndexArr)
+
+        if (remapShadowIndexArr)
+            remapShadowIndexArr.forEach(i => {
                 colors[i] = 140 << 24;
+            });
     
         return colors;
     });

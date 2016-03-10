@@ -1,12 +1,13 @@
 {
   "name": "cnc-pal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "cnc-pal.js",
   "author": "Taryn Hill <Phrohdoh@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
     "@phrohdoh/binary-buffer-parser": "^1.0.0",
-    "bluebird": "^3.3.3"
+    "bluebird": "^3.3.4",
+    "yargs": "^4.2.0"
   }
 }
