@@ -1,7 +1,7 @@
 'use strict';
 
 let Promise = require('bluebird'),
-    parser = require('binary-buffer-parser'),
+    parser = require('@phrohdoh/@phrohdoh/binary-buffer-parser'),
     fs = Promise.promisifyAll(require('fs'));
 
 exports.parsePalAsync = function(filename, palSize, remapShadowIndexArr) {
