@@ -13,18 +13,16 @@ let args = require('yargs')
 Promise.map(args._, function(filename) {
     return pal.parsePalAsync(filename, 255);
 }).then(colorArrs => {
-    return Promise.map(colorArrs, function(colorArr) {
-        colorArr.forEach((color, index) => {
-            let selectedColor = color & 0xffffff,
-                r = selectedColor & 0xff000000 >> 24,
-                g = selectedColor & 0x00ff0000 >> 16,
-                b = selectedColor & 0x0000ff00 >> 8;
+    let grays = [];
 
-            if (r === g && g === b) {
-                console.log('Grayscale: %s', index);
-            }
-        })
+    Promise.map(colorArrs, function(colorArr) {
+        colorArr.forEach((color, index) => {
+            if (color.r === color.g && color.g === color.b)
+                grays.push(index);
+        });
     });
+
+    console.log('Grayscales: %s', grays);
 }).catch(err => {
     console.log(err);
 });
