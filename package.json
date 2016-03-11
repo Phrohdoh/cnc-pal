@@ -1,10 +1,11 @@
 {
   "name": "cnc-pal",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "Tool for parsing Command and Conquer PAL files",
   "main": "cnc-pal.js",
-  "author": "Taryn Hill <Phrohdoh@gmail.com>",
+  "author": "Phrohdoh",
   "license": "GPL-3.0",
+  "repository": "https://github.com/Phrohdoh/cnc-pal",
   "dependencies": {
     "@phrohdoh/binary-buffer-parser": "^1.0.0",
     "bluebird": "^3.3.4",
